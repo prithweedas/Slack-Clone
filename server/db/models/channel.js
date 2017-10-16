@@ -6,7 +6,7 @@ export default (sequelize, DataTypes) => {
         public: DataTypes.BOOLEAN,
       },
       { underscored: true },
-    );
+    )
   
     Channel.associate = (models) => {
       // 1:M

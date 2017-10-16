@@ -8,7 +8,7 @@ export default (sequelize, DataTypes) => {
         },
       },
       { underscored: true },
-    );
+    )
   
     Team.associate = (models) => {
       Team.belongsToMany(models.User, {

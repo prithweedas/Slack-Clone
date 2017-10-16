@@ -1,10 +1,10 @@
 import sequelize from './../index'
 
 const models = {
-    User: sequelize.import(__dirname+'/users.js'),
-    Channel: sequelize.import(__dirname+'/channel.js'),
-    Team: sequelize.import(__dirname+'/team.js'),
-    Message: sequelize.import(__dirname+'/messages.js')
+    User: sequelize.import('./users.js'),
+    Channel: sequelize.import('./channel.js'),
+    Team: sequelize.import('./team.js'),
+    Message: sequelize.import('./messages.js')
 }
 
 Object.keys(models).forEach(modelName => {
