@@ -4,7 +4,7 @@
   "description": "A Slack clone using GraphQL and React",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,9 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "graphql": "^0.11.7",
-    "graphql-tools": "^2.5.0"
+    "graphql-tools": "^2.5.0",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.13.17"
   }
 }

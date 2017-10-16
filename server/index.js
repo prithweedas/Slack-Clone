@@ -7,11 +7,12 @@ import {
 import {
     makeExecutableSchema
 } from 'graphql-tools'
-
+import connection from './db'
 const PORT = process.env.PORT || 3000
 
 import typeDefs from './schema'
 import resolvers from './resolvers'
+import models from './db/models'
 
 const endpointURL = '/graphql'
 
@@ -25,11 +26,13 @@ app.use(endpointURL, bodyParser.json(), graphqlExpress({
     schema
 }))
 
-app.use('/graphiql',graphiqlExpress({
+app.use('/graphiql', graphiqlExpress({
     endpointURL
 }))
 
-app.listen(PORT,(err)=>{
-    if(err) throw err
-    console.log("Server running on port 3000")
+connection.sync().then(() => {
+    app.listen(PORT, (err) => {
+        if (err) throw err
+        console.log("Server running on port 3000")
+    })
 })
