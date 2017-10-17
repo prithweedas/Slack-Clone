@@ -1,28 +1,13 @@
 export default {
     Mutation: {
-        createUser: (parent, args, {
-            models
-        }, info) => {
-            return models.User.create(args)
-        }
+        createUser: (parent, args, { models }, info) =>  
+            models.User.create(args)
     },
     Query: {
-        getUser: (parent, {
-            username
-        }, {
-            models
-        }, info) => {
-            return models.User.findOne({
-                where: {
-                    username
-                }
-            })
-        },
-        getAllUsers: (parent, args, {
-            models
-        }, info) => {
-            return models.User.findAll()
-        }
+        getUser: (parent, {username}, {models}, info) =>
+            models.User.findOne({where: {username}}),
+        getAllUsers: (parent, args, {models}, info) =>
+            models.User.findAll()
     }
 
 }

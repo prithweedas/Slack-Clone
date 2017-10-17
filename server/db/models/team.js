@@ -16,10 +16,10 @@ export default (sequelize, DataTypes) => {
         foreignKey: {
           name: 'teamId',
           field: 'team_id',
-        },
+        }
       })
       Team.belongsTo(models.User, {
-        foreignKey: 'owner',
+        foreignKey: 'owner'
       })
     }
   

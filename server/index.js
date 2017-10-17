@@ -30,7 +30,10 @@ const app = express()
 app.use(endpointURL, bodyParser.json(), graphqlExpress({
     schema,
     context: {
-        models
+        models,
+        User:{
+            id:1
+        }
     }
 }))
 
