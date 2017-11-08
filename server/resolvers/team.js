@@ -1,6 +1,14 @@
 export default {
     Mutation: {
-        createTeam: (parent, args, { models, User }, info) =>
-            models.Team.create({...args, owner: User.id})
+        createTeam: async (parent, args, { models, User }, info) =>{
+            try {
+                await models.Team.create({...args, owner: User.id})
+                return true
+            } catch (error) {
+                console.log(error)
+                return false
+            }
+        }
+            
     }
 }

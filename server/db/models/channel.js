@@ -27,4 +27,4 @@ export default (sequelize, DataTypes) => {
     }
   
     return Channel
-  };
+  }

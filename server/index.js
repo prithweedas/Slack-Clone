@@ -27,12 +27,13 @@ const schema = makeExecutableSchema({
 })
 
 const app = express()
+
 app.use(endpointURL, bodyParser.json(), graphqlExpress({
     schema,
     context: {
         models,
-        User:{
-            id:1
+        User: {
+            id: 1
         }
     }
 }))
